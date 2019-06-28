@@ -1,0 +1,419 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "UNOAPI Swagger Spec. JSON",
+    "version" : "1.0.0",
+    "title" : "UNOAPI"
+  },
+  "host" : "https://dopenapi.wooribank.com",
+  "basePath" : "/",
+  "tags" : [ {
+    "name" : "api-list",
+    "description" : "List of APIs"
+  } ],
+  "paths" : {
+    "/oai/wb/v1/apt/getAptLoanAm" : {
+      "post" : {
+        "tags" : [ "api-list" ],
+        "summary" : "아파트한도대출상담신청",
+        "operationId" : "_oai_wb_v1_apt_getAptLoanAm",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "appkey",
+          "in" : "header",
+          "description" : "API Key(제휴사키)",
+          "required" : false
+        }, {
+          "name" : "authorization",
+          "in" : "header",
+          "description" : "인증토큰",
+          "required" : false
+        }, {
+          "name" : "itcsno",
+          "in" : "header",
+          "description" : "통합고객번호",
+          "required" : false
+        }, {
+          "name" : "ebnk_utzpe_no",
+          "in" : "header",
+          "description" : "전자뱅킹이용자번호",
+          "required" : false
+        }, {
+          "in" : "body",
+          "name" : "REQUEST",
+          "description" : "request body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/_oai_wb_v1_apt_getAptLoanAm_REQUEST_uveovj2o19v5"
+          }
+        } ],
+        "responses" : {
+          "400" : {
+            "description" : "BAD_REQUEST"
+          },
+          "404" : {
+            "description" : "NOT_FOUND"
+          },
+          "405" : {
+            "description" : "METHOD_NOT_ALLOWED"
+          },
+          "500" : {
+            "description" : "INTERNAL_SERVER_ERROR"
+          },
+          "503" : {
+            "description" : "SERVICE_UNAVAILABLE"
+          },
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/_oai_wb_v1_apt_getAptLoanAm_RESPONSE_1ib5yxvcgkawk"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "_oai_wb_v1_apt_getAptLoanAm_REQUEST_uveovj2o19v5" : {
+      "type" : "object",
+      "required" : [ "dataBody", "dataHeader" ],
+      "properties" : {
+        "dataHeader" : {
+          "description" : "response data header",
+          "$ref" : "#/definitions/_oai_wb_v1_apt_getAptLoanAm_dataHeader_1iuvyowa0z2w1"
+        },
+        "dataBody" : {
+          "description" : "response data header",
+          "$ref" : "#/definitions/_oai_wb_v1_apt_getAptLoanAm_dataBody_skxw2z195y04"
+        }
+      }
+    },
+    "_oai_wb_v1_apt_getAptLoanAm_dataHeader_1iuvyowa0z2w1" : {
+      "type" : "object",
+      "properties" : {
+        "UTZPE_CNCT_IPAD" : {
+          "type" : "string",
+          "example" : "",
+          "description" : "이용자접속IP주소"
+        },
+        "UTZPE_CNCT_MCHR_UNQ_ID" : {
+          "type" : "string",
+          "example" : "",
+          "description" : "이용자접속기기고유ID"
+        },
+        "UTZPE_CNCT_TEL_NO_TXT" : {
+          "type" : "string",
+          "example" : "",
+          "description" : "이용자접속전화번호"
+        },
+        "UTZPE_CNCT_MCHR_IDF_SRNO" : {
+          "type" : "string",
+          "example" : "",
+          "description" : "이용자접속기기식별일련번호"
+        },
+        "UTZ_MCHR_OS_DSCD" : {
+          "type" : "string",
+          "example" : "",
+          "description" : "이용기기운영체계구분코드"
+        },
+        "UTZ_MCHR_OS_VER_NM" : {
+          "type" : "string",
+          "example" : "",
+          "description" : "이용기기운영체계버전명"
+        },
+        "UTZ_MCHR_MDL_NM" : {
+          "type" : "string",
+          "example" : "",
+          "description" : "이용기기모델명"
+        },
+        "UTZ_MCHR_APP_VER_NM" : {
+          "type" : "string",
+          "example" : "",
+          "description" : "앱버전"
+        }
+      },
+      "description" : "response data header"
+    },
+    "_oai_wb_v1_apt_getAptLoanAm_dataBody_skxw2z195y04" : {
+      "type" : "object",
+      "properties" : {
+        "TRN_KD_DIS" : {
+          "type" : "string",
+          "example" : "01",
+          "description" : "거래종류구분"
+        },
+        "APT_DJ_CD" : {
+          "type" : "string",
+          "example" : "11201212",
+          "description" : "아파트단지코드"
+        },
+        "PYT" : {
+          "type" : "string",
+          "example" : "34",
+          "description" : "평형"
+        },
+        "PYT_TYP_TXT" : {
+          "type" : "string",
+          "example" : "A",
+          "description" : "평형타입내용"
+        },
+        "MKPR_BAS_DT" : {
+          "type" : "string",
+          "example" : "20180912",
+          "description" : "시가기준일자"
+        },
+        "GEN_TRN_AM" : {
+          "type" : "string",
+          "example" : "780000000",
+          "description" : "일반거래금액"
+        },
+        "SB_ULPR" : {
+          "type" : "string",
+          "example" : "820000000",
+          "description" : "매매상한가"
+        },
+        "SB_LLPR" : {
+          "type" : "string",
+          "example" : "750000000",
+          "description" : "매매하한가"
+        },
+        "RNT_ULPR" : {
+          "type" : "string",
+          "example" : "0",
+          "description" : "임대상한가"
+        },
+        "RNT_LLPR" : {
+          "type" : "string",
+          "example" : "0",
+          "description" : "임대하한가"
+        },
+        "SIDO_CD" : {
+          "type" : "string",
+          "example" : "01",
+          "description" : "시도코드"
+        },
+        "ACDS_CD" : {
+          "type" : "string",
+          "example" : "010",
+          "description" : "시군구코드"
+        },
+        "DNEM_CD" : {
+          "type" : "string",
+          "example" : "050",
+          "description" : "동읍면코드"
+        },
+        "LI_CD" : {
+          "type" : "string",
+          "example" : "01",
+          "description" : "리코드"
+        },
+        "BLD_NM" : {
+          "type" : "string",
+          "example" : "하이닉스아파트",
+          "description" : "건물명"
+        },
+        "DONG_ADR" : {
+          "type" : "string",
+          "example" : "서울시 동대문구 장안2동 ",
+          "description" : "동주소"
+        },
+        "HO_ADR" : {
+          "type" : "string",
+          "example" : "A동 203호",
+          "description" : "호주소"
+        },
+        "ALL_FCNT" : {
+          "type" : "string",
+          "example" : "25",
+          "description" : "전체층수"
+        },
+        "EQV_FCNT" : {
+          "type" : "string",
+          "example" : "12",
+          "description" : "해당층수"
+        },
+        "TOT_HHLD_CN" : {
+          "type" : "string",
+          "example" : "644",
+          "description" : "총세대수"
+        },
+        "SQM" : {
+          "type" : "string",
+          "example" : "108",
+          "description" : "면적"
+        },
+        "ALL_ROOM_NCNT" : {
+          "type" : "string",
+          "example" : "",
+          "description" : "전체방개수"
+        },
+        "RNT_ROOM_NCNT" : {
+          "type" : "string",
+          "example" : "0",
+          "description" : "임대방개수"
+        },
+        "LTHR_AM" : {
+          "type" : "string",
+          "example" : "0",
+          "description" : "임대차금액"
+        },
+        "PRK_AM" : {
+          "type" : "string",
+          "example" : "0",
+          "description" : "선순위금액"
+        },
+        "LN_MECN" : {
+          "type" : "string",
+          "example" : "48",
+          "description" : "대출개월수"
+        },
+        "CNAD_TEL_NO_1" : {
+          "type" : "string",
+          "example" : "01022313341",
+          "description" : "연락처전화번호_1"
+        },
+        "CNAD_TEL_NO_2" : {
+          "type" : "string",
+          "example" : "",
+          "description" : "연락처전화번호_2"
+        },
+        "CNAD_TEL_NO_3" : {
+          "type" : "string",
+          "example" : "",
+          "description" : "연락처전화번호_3"
+        },
+        "RQPE_ITCSNO" : {
+          "type" : "string",
+          "example" : "10781121123",
+          "description" : "신청인통합고객번호"
+        },
+        "RQPE_FNM" : {
+          "type" : "string",
+          "example" : "홍신구",
+          "description" : "신청자성명"
+        },
+        "INET_CNSL_TRN_DSCD" : {
+          "type" : "string",
+          "example" : "1",
+          "description" : "인터넷상담거래구분코드"
+        },
+        "APT_EVL_ISCD" : {
+          "type" : "string",
+          "example" : "3",
+          "description" : "아파트평가기관코드"
+        },
+        "MKPR_DSCD" : {
+          "type" : "string",
+          "example" : "1",
+          "description" : "시가구분코드"
+        },
+        "LN_HOPE_BRCD" : {
+          "type" : "string",
+          "example" : "101201",
+          "description" : "대출희망점코드"
+        },
+        "LN_RQ_AM" : {
+          "type" : "string",
+          "example" : "200000000",
+          "description" : "대출신청금액"
+        },
+        "ADVPE_ENO" : {
+          "type" : "string",
+          "example" : "80126722",
+          "description" : "권유자직원번호"
+        },
+        "FD_USCD" : {
+          "type" : "string",
+          "example" : "2",
+          "description" : "자금용도코드"
+        },
+        "LN_HOPE_DT" : {
+          "type" : "string",
+          "example" : "20190712",
+          "description" : "대출희망일자"
+        },
+        "BZBR_COLPE_ALOC_YN" : {
+          "type" : "string",
+          "example" : "Y",
+          "description" : "영업점모집인배정여부"
+        }
+      },
+      "description" : "response data header"
+    },
+    "_oai_wb_v1_apt_getAptLoanAm_RESPONSE_1ib5yxvcgkawk" : {
+      "type" : "object",
+      "required" : [ "dataBody", "dataHeader" ],
+      "properties" : {
+        "dataHeader" : {
+          "description" : "response data header",
+          "$ref" : "#/definitions/_oai_wb_v1_apt_getAptLoanAm_dataHeader_u7oi1unvi15t"
+        },
+        "dataBody" : {
+          "description" : "response data header",
+          "$ref" : "#/definitions/_oai_wb_v1_apt_getAptLoanAm_dataBody_1jig3nmdwp06r"
+        }
+      }
+    },
+    "_oai_wb_v1_apt_getAptLoanAm_dataHeader_u7oi1unvi15t" : {
+      "type" : "object",
+      "description" : "response data header"
+    },
+    "_oai_wb_v1_apt_getAptLoanAm_dataBody_1jig3nmdwp06r" : {
+      "type" : "object",
+      "properties" : {
+        "TRN_KD_DIS" : {
+          "type" : "string",
+          "example" : "01",
+          "description" : "거래종류구분"
+        },
+        "LN_AVL_AM" : {
+          "type" : "string",
+          "example" : "200000000",
+          "description" : "대출가능금액"
+        },
+        "HGST_IR" : {
+          "type" : "string",
+          "example" : "4.03",
+          "description" : "최고금리"
+        },
+        "LWST_IR" : {
+          "type" : "string",
+          "example" : "3.04",
+          "description" : "최저금리"
+        },
+        "BAS_IR" : {
+          "type" : "string",
+          "example" : "3.332",
+          "description" : "기준금리"
+        },
+        "TRN_DT" : {
+          "type" : "string",
+          "example" : "20190712",
+          "description" : "거래일자"
+        },
+        "TRN_SRNO" : {
+          "type" : "string",
+          "example" : "0",
+          "description" : "거래일련번호"
+        },
+        "EXZN_YN" : {
+          "type" : "string",
+          "example" : "N",
+          "description" : "투기지역여부"
+        },
+        "MTAR_EXSZ_YN" : {
+          "type" : "string",
+          "example" : "N",
+          "description" : "수도권투기과열지구여부"
+        },
+        "RISK_MNG_SISC_RGN_YN" : {
+          "type" : "string",
+          "example" : "N",
+          "description" : "리스크관리강화지역여부"
+        }
+      },
+      "description" : "response data header"
+    }
+  }
+}
