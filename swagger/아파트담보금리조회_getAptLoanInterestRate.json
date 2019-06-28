@@ -5,7 +5,7 @@
     "version" : "1.0.0",
     "title" : "UNOAPI"
   },
-  "host" : "https://dopenapi.wooribank.com",
+  "host" : "",
   "basePath" : "/",
   "tags" : [ {
     "name" : "api-list",
