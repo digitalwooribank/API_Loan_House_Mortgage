@@ -1,21 +1,21 @@
 {
   "swagger" : "2.0",
   "info" : {
-    "description" : "UNOAPI Swagger Spec. JSON",
+    "description" : "Wooribank API, Wooribank Swagger Spec. JSON",
     "version" : "1.0.0",
-    "title" : "UNOAPI"
+    "title" : "Wooribank API"
   },
-  "host" : "",
+  "host" : "localhost:8080",
   "basePath" : "/",
   "tags" : [ {
-    "name" : "api-list",
-    "description" : "List of APIs"
+    "name" : "List of APIs",
+    "description" : ""
   } ],
   "paths" : {
-    "/oai/wb/v1/apt/getAptLoanAm" : {
+	"/oai/wb/v1/apt/getAptLoanAm" : {
       "post" : {
-        "tags" : [ "api-list" ],
-        "summary" : "아파트한도대출상담신청",
+        "tags" : [ "List of APIs" ],
+        "summary" : "아파트담보대출한도조회",
         "operationId" : "_oai_wb_v1_apt_getAptLoanAm",
         "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
@@ -23,21 +23,13 @@
           "name" : "appkey",
           "in" : "header",
           "description" : "API Key(제휴사키)",
+		  "type" : "string",
           "required" : false
         }, {
           "name" : "authorization",
           "in" : "header",
           "description" : "인증토큰",
-          "required" : false
-        }, {
-          "name" : "itcsno",
-          "in" : "header",
-          "description" : "통합고객번호",
-          "required" : false
-        }, {
-          "name" : "ebnk_utzpe_no",
-          "in" : "header",
-          "description" : "전자뱅킹이용자번호",
+		  "type" : "string",
           "required" : false
         }, {
           "in" : "body",
@@ -75,7 +67,7 @@
     }
   },
   "definitions" : {
-    "_oai_wb_v1_apt_getAptLoanAm_REQUEST_uveovj2o19v5" : {
+	"_oai_wb_v1_apt_getAptLoanAm_REQUEST_uveovj2o19v5" : {
       "type" : "object",
       "required" : [ "dataBody", "dataHeader" ],
       "properties" : {
@@ -145,7 +137,7 @@
         },
         "APT_DJ_CD" : {
           "type" : "string",
-          "example" : "11201212",
+          "example" : "11111111",
           "description" : "아파트단지코드"
         },
         "PYT" : {
@@ -160,7 +152,7 @@
         },
         "MKPR_BAS_DT" : {
           "type" : "string",
-          "example" : "20180912",
+          "example" : "20200314",
           "description" : "시가기준일자"
         },
         "GEN_TRN_AM" : {
@@ -210,17 +202,17 @@
         },
         "BLD_NM" : {
           "type" : "string",
-          "example" : "하이닉스아파트",
+          "example" : "ooo 아파트",
           "description" : "건물명"
         },
         "DONG_ADR" : {
           "type" : "string",
-          "example" : "서울시 동대문구 장안2동 ",
+          "example" : "서울시 동대문구 장안0동 ",
           "description" : "동주소"
         },
         "HO_ADR" : {
           "type" : "string",
-          "example" : "A동 203호",
+          "example" : "A동 000호",
           "description" : "호주소"
         },
         "ALL_FCNT" : {
@@ -270,7 +262,7 @@
         },
         "CNAD_TEL_NO_1" : {
           "type" : "string",
-          "example" : "01022313341",
+          "example" : "01012345678",
           "description" : "연락처전화번호_1"
         },
         "CNAD_TEL_NO_2" : {
@@ -285,12 +277,12 @@
         },
         "RQPE_ITCSNO" : {
           "type" : "string",
-          "example" : "10781121123",
+          "example" : "1111111111111",
           "description" : "신청인통합고객번호"
         },
         "RQPE_FNM" : {
           "type" : "string",
-          "example" : "홍신구",
+          "example" : "홍길동",
           "description" : "신청자성명"
         },
         "INET_CNSL_TRN_DSCD" : {
@@ -310,7 +302,7 @@
         },
         "LN_HOPE_BRCD" : {
           "type" : "string",
-          "example" : "101201",
+          "example" : "111111",
           "description" : "대출희망점코드"
         },
         "LN_RQ_AM" : {
@@ -320,7 +312,7 @@
         },
         "ADVPE_ENO" : {
           "type" : "string",
-          "example" : "80126722",
+          "example" : "11111111",
           "description" : "권유자직원번호"
         },
         "FD_USCD" : {
@@ -330,7 +322,7 @@
         },
         "LN_HOPE_DT" : {
           "type" : "string",
-          "example" : "20190712",
+          "example" : "20210214",
           "description" : "대출희망일자"
         },
         "BZBR_COLPE_ALOC_YN" : {
